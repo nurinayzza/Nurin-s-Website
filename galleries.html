@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nurin's Gallery</title>
+  <meta name="author" content="Nurin Ayzzasyura" />
+  <meta name="description" content="My personal photo gallery" />
+  <style>
+    body {
+      font-family: EB Garamond;
+      background-color: #f1f8f4;
+      color: #3b5249;
+      margin: 0;
+      padding: 0;
+    }
+
+    #container {
+      max-width: 1500px;
+      margin: auto;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(77, 124, 104, 0.2);
+    }
+
+    #header img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 3px solid #6b9c8f;
+      border-radius: 15px 15px 0 0;
+    }
+
+    #nav {
+      background-color: #a8d5ba;
+      text-align: center;
+      padding: 10px;
+    }
+
+    #nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      padding: 8px 12px;
+      background-color: #d9ede1;
+      border-radius: 8px;
+      display: inline-block;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    #nav a:hover {
+      background-color: #b5dbc9;
+    }
+
+    #footer {
+      background: #5e8b7e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
+    #content {
+      padding: 25px;
+      color: #3b5249;
+      line-height: 1.6;
+    }
+
+    #content h1 {
+      color: #2e4f3e;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-gap: 20px;
+      margin-top: 30px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(90, 141, 112, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.03);
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover .gallery-image {
+      transform: scale(1.1);
+    }
+
+    .image-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(46, 79, 62, 0.8);
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .lightbox-image {
+      max-width: 100%;
+      max-height: 80vh;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+
+    .lightbox-caption {
+      color: white;
+      text-align: center;
+      margin-top: 15px;
+      font-size: 1.2em;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .prev-btn, .next-btn {
+      position: absolute;
+      top: 50%;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px;
+      transform: translateY(-50%);
+      background-color: rgba(168, 213, 186, 0.5);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .prev-btn {
+      left: 30px;
+    }
+
+    .next-btn {
+      right: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      }
+      
+      #nav a {
+        margin: 5px;
+        padding: 6px 8px;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+      
+      #nav a {
+        margin: 3px;
+        padding: 4px 6px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <img src="gambar/nurin kucing.jpg" alt="Nurin with cat" />
+    </div>
+
+    <div id="nav">
+      <a href="index.html">🏠 Home</a>
+      <a href="about.html">👤 About</a>
+      <a href="education.html">🎓 Education</a>
+      <a href="family.html">👪 Family</a>
+      <a href="friends.html">❤️ Friends</a>
+      <a href="pet.html">🐾 Pets</a>
+      <a href="galleries.html">🖼️ Gallery</a>
+      <a href="contact.html">✉️ Contact</a>
+    </div>
+
+    <div id="content">
+      <h1>My Photo Gallery</h1>
+      <p>Here are some special moments from my life that I'd like to share with you. Click on any image to view it larger.</p>
+      
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="gambar/favphoto.jpg" alt="Fav Photo" class="gallery-image">
+          <div class="image-caption">Beautiful view in Seri Perigi</div>
+        </div>
+        <div class="gallery-item">
+          <img src="gambar/familyraya.jpg" alt="Family" class="gallery-image">
+          <div class="image-caption">My Big Family Photo during Raya 2025</div>
+        </div>
+        <div class="gallery-item">
+          <img src="gambar/assignment.jpg" alt="Friends" class="gallery-image">
+          <div class="image-caption">My Assignment Buddies <3</div>
+        </div>
+        <div class="gallery-item">
+          <img src="gambar/ayamgepuk.jpg" alt="Food" class="gallery-image">
+          <div class="image-caption">My Comfort Food</div>
+        </div>
+        <div class="gallery-item">
+          <img src="gambar/highschool.jpg" alt="Class" class="gallery-image">
+          <div class="image-caption">Classmate in highschool</div>
+        </div>
+        <div class="gallery-item">
+          <img src="gambar/beach.jpg" alt="Travel" class="gallery-image">
+          <div class="image-caption">Ferringhi Beach </div>
+        </div>
+        <div class="gallery-item">
+          <img src="gambar/friends.jpg" alt="Friends" class="gallery-image">
+          <div class="image-caption">My University Friends</div>
+        </div>
+        <div class="gallery-item">
+          <img src="gambar/me.jpg" alt="Nurin" class="gallery-image">
+          <div class="image-caption">Myself</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <span class="close-btn" id="close-btn">&times;</span>
+      <span class="prev-btn" id="prev-btn">&lt;</span>
+      <span class="next-btn" id="next-btn">&gt;</span>
+      <div class="lightbox-content">
+        <img src="" alt="" class="lightbox-image" id="lightbox-image">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <p>&copy; 2025 Nurin Ayzzasyura | Last updated: May 21, 2025</p>
+    </div>
+  </div>
+
+  <script>
+    // Lightbox functionality
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const closeBtn = document.getElementById('close-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    
+    let currentImageIndex = 0;
+    const images = [];
+    
+    // Collect all gallery images
+    galleryItems.forEach((item, index) => {
+      const img = item.querySelector('.gallery-image');
+      const caption = item.querySelector('.image-caption').textContent;
+      
+      images.push({
+        src: img.getAttribute('src'),
+        alt: img.getAttribute('alt'),
+        caption: caption
+      });
+      
+      // Add click event to each image
+      img.addEventListener('click', () => {
+        currentImageIndex = index;
+        updateLightbox();
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    
+    // Update lightbox content
+    function updateLightbox() {
+      lightboxImage.src = images[currentImageIndex].src;
+      lightboxImage.alt = images[currentImageIndex].alt;
+      lightboxCaption.textContent = images[currentImageIndex].caption;
+    }
+    
+    // Close lightbox
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+    
+    // Previous image
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      updateLightbox();
+    });
+    
+    // Next image
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      updateLightbox();
+    });
+    
+    // Close when clicking outside image
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.style.display === 'flex') {
+        if (e.key === 'Escape') {
+          lightbox.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        } else if (e.key === 'ArrowLeft') {
+          currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+          updateLightbox();
+        } else if (e.key === 'ArrowRight') {
+          currentImageIndex = (currentImageIndex + 1) % images.length;
+          updateLightbox();
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nurin's Pet Corner</title>
+
+  <style>
+    body {
+      font-family: EB Garamond;
+      background-color: #f1f8f4;
+      color: #3b5249;
+      margin: 0;
+      padding: 0;
+    }
+
+    #container {
+      max-width: 1500px;
+      margin: auto;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(77, 124, 104, 0.2);
+    }
+
+    #header img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 3px solid #6b9c8f;
+      border-radius: 15px 15px 0 0;
+    }
+
+    #nav {
+      background-color: #a8d5ba;
+      text-align: center;
+      padding: 10px;
+    }
+
+    #nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      padding: 8px 12px;
+      background-color: #d9ede1;
+      border-radius: 8px;
+      display: inline-block;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    #nav a:hover {
+      background-color: #b5dbc9;
+    }
+
+    .footer {
+      background: #5e8b7e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
+    h1, h2, h3 {
+      font-family: EB Garamond;
+    }
+
+    h1 {
+      color: #2e4f3e;
+    }
+    
+    .content {
+      padding: 30px;
+    }
+    
+    .section-title {
+      color: #5e8b7e;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 1.8em;
+      font-weight: 700;
+    }
+    
+    .intro-text {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 1.1em;
+    }
+    
+    /* Video */
+    .video-container {
+      margin: 30px auto;
+      max-width: 600px;
+      text-align: center;
+    }
+    
+    video {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Pet Gallery */
+    .pet-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin: 40px 0;
+    }
+    
+    .pet-card {
+      width: 280px;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .pet-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    
+    .pet-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .pet-info {
+      padding: 15px;
+      text-align: center;
+    }
+    
+    .pet-info h3 {
+      color: #5e8b7e;
+      margin-bottom: 10px;
+      font-size: 1.3em;
+    }
+    
+    @media (max-width: 768px) {
+      #nav a {
+        margin: 5px;
+        padding: 8px 10px;
+        font-size: 0.9em;
+      }
+      
+      .content {
+        padding: 20px;
+      }
+      
+      .pet-gallery {
+        gap: 15px;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      #nav a {
+        display: block;
+        margin: 8px auto;
+        width: 80%;
+      }
+      
+      .section-title {
+        font-size: 1.5em;
+      }
+      
+      .pet-card {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+      <img src="gambar/nurin kucing.jpg" alt="Banner">
+    </header>
+    
+    <nav id="nav">
+      <a href="index.html">🏠 Home</a>
+      <a href="about.html">👤 About</a>
+      <a href="education.html">🎓 Education</a>
+      <a href="family.html">👪 Family</a>
+      <a href="friends.html">❤️ Friends</a>
+      <a href="pet.html">🐾 Pets</a>
+      <a href="galleries.html">🖼️ Gallery</a>
+      <a href="contact.html">✉️ Contact</a>
+    </nav>
+    
+    <main class="content">
+      <h1 class="section-title">My Rabbit 🐇💗</h1>
+      <p class="intro-text">
+        I have been raising rabbits for the past three years. It all started when my brother's friend gave us a rabbit for free. Since then, rabbits have become my favorite animals because of their cute antics. Although taking care of them is not as easy as taking care of a cat, I really enjoy it.
+      </p>
+      
+      <div class="video-container">
+        <video controls poster="gambar/bunny-poster.jpg">
+          <source src="videos/bunny.MOV" type="video/mp4">
+        </video>
+      </div>
+      
+      <section class="pet-gallery">
+        <article class="pet-card">
+          <img src="gambar/rabbit.jpg" alt="White bunny sitting in the grass">
+          <div class="pet-info">
+            <h3>Snowball</h3>
+            <p>My energetic little troublemaker who loves to explore!</p>
+          </div>
+        </article>
+        
+        <article class="pet-card">
+          <img src="gambar/rabbit2.jpg" alt="Mother rabbit with her baby">
+          <div class="pet-info">
+            <h3>Mama Fluffy & Baby</h3>
+            <p>The most adorable mother-baby duo!</p>
+          </div>
+        </article>
+      </section>
+      
+    
+    <footer class="footer">
+      <p>&copy; 2025 Nurin Ayzzasyura | Last updated: May 21, 2025</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

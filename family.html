@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Family - Nurin's Website</title>
+  <meta name="author" content="Nurin Ayzzasyura" />
+  <meta name="description" content="Family" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      font-family: EB Garamond;
+      background-color: #f1f8f4;
+      color: #3b5249;
+      margin: 0;
+      padding: 0;
+    }
+
+    #container {
+      max-width: 1500px;
+      margin: auto;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(77, 124, 104, 0.2);
+    }
+
+    #header img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 3px solid #6b9c8f;
+      border-radius: 15px 15px 0 0;
+    }
+
+    #nav {
+      background-color: #a8d5ba;
+      text-align: center;
+      padding: 10px;
+    }
+
+    #nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 8px;
+      padding: 8px 12px;
+      background-color: #d9ede1;
+      border-radius: 8px;
+      display: inline-block;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    #nav a:hover {
+      background-color: #b5dbc9;
+    }
+
+    #content {
+      padding: 40px;
+
+    }
+
+    .footer {
+      background: #5e8b7e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+
+    .gallery {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      justify-content: center;
+    }
+
+    .gallery img {
+      width: 180px;
+      height: 240px;
+      object-fit: cover;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    h1 {
+      color: #4d7c68;
+      font-size: 2.5em;
+      text-align: left;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    .description {
+      text-align: justify;
+      font-size: 1.2em;
+      margin: 30px auto;
+      color: #355f4f;
+      line-height: 1.6;
+      padding: 20px;
+      background-color: #eaf4ef;
+      border-radius: 10px;
+      max-width: 800px;
+      box-shadow: inset 0 0 5px rgba(77, 124, 104, 0.15);
+    }
+
+    .gallery-title {
+      color: #4d7c68;
+      font-size: 2em;
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .gallery-title:after {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 3px;
+      background: #679e86;
+      margin: 10px auto;
+    }
+
+    .memory-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+
+    .memory-gallery img {
+      width: 220px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 2px 2px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .memory-gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 2px 2px 15px rgba(0,0,0,0.25);
+    }
+
+    @media (max-width: 768px) {
+      #nav a {
+        margin: 5px;
+        padding: 6px 8px;
+        font-size: 0.9em;
+      }
+
+      .gallery img {
+        width: 140px;
+        height: 180px;
+      }
+
+      .memory-gallery img {
+        width: 160px;
+        height: 200px;
+      }
+
+      .description {
+        font-size: 1em;
+        padding: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #content {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      .gallery-title {
+        font-size: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="header">
+      <img src="gambar/nurin kucing.jpg" alt="Banner" />
+    </div>
+
+    <div id="nav">
+      <a href="index.html">🏠 Home</a>
+      <a href="about.html">👤 About</a>
+      <a href="education.html">🎓 Education</a>
+      <a href="family.html">👪 Family</a>
+      <a href="friends.html">❤️ Friends</a>
+      <a href="pet.html">🐾 Pets</a>
+      <a href="galleries.html">🖼️ Gallery</a>
+      <a href="contact.html">✉️ Contact</a>
+    </div>
+
+    <div id="content">
+      <h1>My Lovely Family 👨‍👩‍👧‍👦💖</h1>
+      <p class="description" style="text-align: center; font-style: italic;">Click on the photos below to learn more about my wonderful family members! 😆</p>
+
+      <div class="gallery">
+        <img src="gambar/parents.jpg" alt="Parents" onclick="showDescription('parents')"/>
+        <img src="gambar/brothers.jpg" alt="Brothers" onclick="showDescription('brothers')"/>
+        <img src="gambar/sister.jpg" alt="Sister" onclick="showDescription('sister')"/>
+      </div>
+
+      <div id="description" class="description" style="display: none;"></div>
+
+      <h2 class="gallery-title">Family Memories 📸</h2>
+      <div class="memory-gallery">
+        <img src="gambar/kenangan1.jpg" alt="Family Memory 1" />
+        <img src="gambar/kenangan2.jpg" alt="Family Memory 2" />
+        <img src="gambar/kenangan3.jpg" alt="Family Memory 3" />
+        <img src="gambar/kenangan4.jpg" alt="Family Memory 4"/>
+        <img src="gambar/kenangan5.jpg" alt="Family Memory 5"/>
+        <img src="gambar/kenangan6.jpg" alt="Family Memory 6"/>
+      </div>
+    </div>
+
+<script>
+  function showDescription(group) {
+    var description = '';
+    var descriptionElement = document.getElementById('description');
+
+    if (group === 'parents') {
+      description = "<strong>Parents:</strong><br><br>My dad, Adanan bin Rasid, is super caring and always has my back. He's patient and disciplined, and I learn so much from him. He also makes sure I've got enough money so I don't go hungry at uni.<br><br>Meanwhile, my mom, Salina binti Abdul Sukur, is one of the most loving people I know. She's strong, passionate, and always puts family first. She's taught me so much about love and togetherness. And honestly, every meal she makes is my favorite.";
+    } else if (group === 'brothers') {
+      description = "<strong>Brothers:</strong><br><br>I have 4 older brothers who are all really responsible when it comes to their small families. They're always helping each other out, and each of them has their own random quirks. They love making jokes and are the life of the family, always adding fun and laughter to our days.<br><br>And I also have youngest brother, the baby of the family, often causes trouble, but he always listens and helps when his older siblings ask for assistance.";
+    } else if (group === 'sister') {
+      description = "<strong>Sister:</strong><br><br>My one and only sister who loves to joke around, argue playfully, and share stories with me. She is caring and loving sister who is always there to offer advice and support. Whether it's stealing my clothes or plotting our next sibling showdown, she always knows how to bring the fun.";
+    }
+
+    if (descriptionElement.style.display === 'none' || descriptionElement.innerHTML === '') {
+      descriptionElement.innerHTML = description;
+      descriptionElement.style.display = 'block';
+    } else {
+      descriptionElement.style.display = 'none';
+    }
+  }
+</script>
+
+
+    <div class="footer">
+      <p>&copy; 2025 Nurin Ayzzasyura | Last updated: May 21, 2025</p>
+    </div>
+
+</body>
+</html>
